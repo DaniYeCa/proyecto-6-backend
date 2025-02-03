@@ -33,9 +33,21 @@ const putPlataforma = async (req, res, next) => {
   try {
     const { id } = req.params;
     const oldPlataforma = await Plataforma.findById(id);
+
+    if (!oldPlataforma) return res.status(400).json("error en la solicitud")
+
     const newPlataforma = new Plataforma(req.body);
-    newPlataforma.peliculas = [...oldPlataforma.peliculas, ...req.body.peliculas]
+    if (req.body.peliculas) {
+      newPlataforma.peliculas = [
+        ...oldPlataforma.peliculas,
+        ...req.body.peliculas,
+      ]
+    } else {
+      newPlataforma.peliculas = [...oldPlataforma.peliculas]
+    }
+
     newPlataforma._id = id;
+
     const plataformaUpdated = await Plataforma.findByIdAndUpdate(id, newPlataforma, { new: true })
     return res.status(200).json(plataformaUpdated)
   } catch (error) {
