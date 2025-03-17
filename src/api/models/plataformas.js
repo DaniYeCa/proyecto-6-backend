@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 
 const plataformaSchema = new mongoose.Schema({
-  nombre: { type: String, required: true },
+  nombre: { type: String, required: true, unique: true },
   imagen: { type: String, required: true },
   peliculas: [{ type: mongoose.Types.ObjectId, ref: "peliculas", required: false }]
 }, {
