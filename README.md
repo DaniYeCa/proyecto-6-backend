@@ -55,7 +55,7 @@ npm i express mongoose dotenv
 
 
 
-## Development
+## Desarrollo
 
 - Creé modelos para las dos base de datos, una para las peliculas y otra para las plataformas.
 - Creé el CRUD completo para poder realizar las distintas funciones que nos ayudara a su fincionamiento correcto.
@@ -63,9 +63,32 @@ npm i express mongoose dotenv
 - La carpeta API contiene los siguientes archivos: *Controllers, Models, routers*.
 - Creé la carpeta donde ira la *semilla*, que es desde donde se obtendra nuestros datos de peliculas.
 
-## License
+- Las diferentes URLs para realizar los post tanto de peliculas como de plataformas son los siguientes: 
 
-Mi primer servidor con conexion a BBDD y api-rest
+```sh
+http://localhost:3000/api/v1/peliculas
+http://localhost:3000/api/v1/plataformas
+```
+
+- Tambien hay diferentes URLs independientemente para lo que quieras hacer,
+
+*Es decir si quieres buscar por tiempo la URL termina en: 
+```sh
+http://localhost:3000/api/v1/peliculas/tiempo/:tiempo
+```
+*Es decir si quieres buscar por categoria la URL termina en: 
+```sh
+http://localhost:3000/api/v1/peliculas/categoria/:categoria
+```
+*Es decir si quieres buscar por "id" la URL termina en: 
+```sh
+http://localhost:3000/api/v1/peliculas/:id
+http://localhost:3000/api/v1/plataformas/:id
+```
+
+## Licencia
+
+Mi primer servidor con conexion a BBDD y api-rest, De Daniel Yepes Carrillo
 
 
    [Visual Studio Code]: <https://code.visualstudio.com>
